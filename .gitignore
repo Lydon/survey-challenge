@@ -1,0 +1,6 @@
+/packages/sc-sdk/node_modules/
+/packages/sc-sdk/dist/
+/packages/sc-ui/node_modules/
+/packages/sc-ui/dist/
+/node_modules/
+/apps/host/node_modules/

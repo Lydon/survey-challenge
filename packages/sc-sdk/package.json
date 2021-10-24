@@ -1,0 +1,19 @@
+{
+  "name": "@sc/sdk",
+  "version": "1.0.0",
+  "description": "Survey Challenge SDK",
+  "main": "index.js",
+  "dependencies": {
+    "redux": "^4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build:sdk": "tsc -p tsconfig.json"
+  },
+  "keywords": [
+    "Survey",
+    "Challenge"
+  ],
+  "author": "lydon.bugeja",
+  "license": "ISC"
+}

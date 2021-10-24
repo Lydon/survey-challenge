@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+	"module": "esnext",
+	"target": "esnext",
+	"jsx": "react",
+	"moduleResolution": "node",
+	"strict": true,
+	"noEmit": true,
+	"baseUrl": ".",
+	"allowJs": true,
+	"importHelpers": true,
+	"skipLibCheck": true,
+	"incremental": true,
+	"isolatedModules": true,
+	"esModuleInterop": true,
+	"typeRoots": ["@types"],
+	"types": ["node"],
+	"paths": {
+	  "@sc/ui/*": ["packages/sc-ui/dist/esnext/*"],
+	  "@sc/sdk": ["packages/sc-sdk/dist/esnext"]
+	}
+  }
+}
