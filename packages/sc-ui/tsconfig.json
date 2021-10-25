@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-	"outDir": "./dist/esnext",
-	"noEmit": false
+	"noEmit": false,
+	"declaration": true,
+	"declarationDir": "dist/esnext"
   },
   "include": [
 	"./src/**/**.tsx",
