@@ -1,6 +1,7 @@
 {
   "name": "@sc/ui",
   "version": "1.0.0",
+  "description": "Survey Challenge ui",
   "scripts": {
     "build:ui": "rollup -c rollup.config.js"
   },
@@ -12,18 +13,18 @@
   },
   "peerDependencies": {
     "bootstrap": "^5.1.3",
-    "@types/node": "^12.20.34",
-    "@types/react": "^17.0.31",
-    "@types/react-dom": "^17.0.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
     "react-bootstrap": "^2.0.0",
-    "redux": "^4.1.1"
+    "redux": "^4.1.1",
+    "typescript": "^4.4.4",
+    "tslib": "^2.3.1"
   },
   "keywords": [
     "Survey",
-    "Challenge"
+    "Challenge",
+    "ui"
   ],
   "author": "lydon.bugeja",
   "license": "ISC"

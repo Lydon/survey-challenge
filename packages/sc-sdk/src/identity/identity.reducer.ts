@@ -1,7 +1,10 @@
 import { Identity, IdentityStore } from "./identity.model";
 import { IdentityActions, IdentityTypes } from "./identity.types";
 
-const INITIAL_STATE: IdentityStore = {};
+const INITIAL_STATE: IdentityStore = {
+    name: "",
+    email: ""
+};
 
 export function identity (
     state: Readonly<IdentityStore> = INITIAL_STATE,

@@ -4,6 +4,9 @@
     "outDir": "./dist/esnext",
     "noEmit": false
   },
+  "exclude": [
+    "./src/**/**.spec.ts"
+  ],
   "include": [
     "./src/**/**.ts"
   ]

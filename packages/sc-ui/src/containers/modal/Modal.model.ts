@@ -1,8 +1,8 @@
 import { ModalSection } from "@sc/sdk";
 
 export type ModalProps = {
-    options: ModalOptions;
-    controls?: ModalControls;
+    options?: ModalOptions;
+    sections?: ModalSectionConfig;
 };
 
 export interface ModalOptions {
@@ -13,6 +13,7 @@ export interface ModalOptions {
 export interface ModalState {
     modalOptions: ModalOptions;
     activeSection?: ModalSection;
+    sections: ModalSectionConfig;
 }
 
 export interface ModalSectionConfig {
@@ -21,12 +22,6 @@ export interface ModalSectionConfig {
     nextSection?: ModalSection;
     previousSection?: ModalSection;
     hasSubmit?: boolean;
-}
-
-interface ModalControls {
-    showPrevious?: boolean;
-    showNext?: boolean;
-    save?: boolean;
 }
 
 export enum ModalControl {

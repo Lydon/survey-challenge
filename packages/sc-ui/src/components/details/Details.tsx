@@ -33,10 +33,7 @@ export const Details: React.FC = () => {
         const formDetails = { ...details, [e.target.name]: e.target.value };
         setDetails(formDetails);
         getCanProceed(formDetails);
-    };
-
-    const onBlur = () => {
-        dispatch(sdkSetDetails(details));
+        dispatch(sdkSetDetails(formDetails));
     };
 
     function getCanProceed(details: DetailsType): void {
@@ -56,7 +53,6 @@ export const Details: React.FC = () => {
                     aria-label="Age"
                     name="age"
                     onChange={onChange}
-                    onBlur={onBlur}
                 >
                     <option value={""}>Select Age</option>
                     {[...Array(100)].map(
@@ -79,7 +75,6 @@ export const Details: React.FC = () => {
                                 className="form-check-input"
                                 type="radio"
                                 name="gender"
-                                onBlur={onBlur}
                                 onChange={onChange}
                                 value={value}
                                 checked={details.gender === value}

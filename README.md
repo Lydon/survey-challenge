@@ -21,6 +21,10 @@ Requires lerna v3.13.1+ to be installed globally
 - Build UI - `npm run build:ui`
 - Build All - `npm run build:all`
 
+### Components
+- [Modal](./packages/sc-ui/src/containers/modal/README.md)
+
+
 ## Start Development
 - Start development server - `npm run start`
 

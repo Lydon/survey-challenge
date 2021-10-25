@@ -13,8 +13,13 @@
 	"incremental": true,
 	"isolatedModules": true,
 	"esModuleInterop": true,
-	"typeRoots": ["@types"],
-	"types": ["node"],
+	"types": [
+	  "node",
+	  "jest"
+	],
+	"typeRoots": [
+	  "node_modules/@types"
+	],
 	"paths": {
 	  "@sc/ui": ["packages/sc-ui/src"],
 	  "@sc/sdk": ["packages/sc-sdk/src"]

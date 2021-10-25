@@ -29,31 +29,21 @@ import {
 import { ModalControl, ModalProps, ModalState } from "./Modal.model";
 import { ModalContext } from "./Modal.context";
 
-// TODO:: useContext to check if can proceed to next - DONE
-// TODO:: add summarization and add submit - DONE
-// TODO:: persist store on refresh - DONE
-// TODO:: clean reducer clean state - DONE
-// TODO:: add Successfully submitted the form... NO NEED
-// TODO:: restrict from submitting again if already submitted - DONE
-
+// TODO:: export as proper widget
 // TODO:: add unit testing
-// TODO:: add README with all steps - DONE
 // TODO:: clean packages dependencies - DONE to recheck
 
-// TODO:: provide the default option for model mapper survey
-// TODO:: export as proper widget
-// TODO:: display form section...
-
-export const Modal: React.FC<ModalProps> = ({ options }) => {
+export const Modal: React.FC<ModalProps> = ({ options , sections}) => {
     const [state, setState] = useReducer<Reducer<ModalState, Partial<ModalState>>>(
         (state, newState) => ({ ...state, ...newState }),
         {
             modalOptions: Object.assign({}, ModalOptionsDefaults, options),
+            sections: Object.assign({}, ModalSectionDefaults, sections),
             activeSection: undefined
         }
     );
-    const dispatch = useDispatch();
     const [canProceed, setCanProceed] = useState<boolean>(false);
+    const dispatch = useDispatch();
     const getActiveSection = useSelector(getModalActiveSection);
     const isModalSubmitted = useSelector(getIsSubmitted);
 
