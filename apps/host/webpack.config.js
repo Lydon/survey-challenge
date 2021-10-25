@@ -17,14 +17,15 @@ const config = {
     resolve: {
         plugins: [
             new TsconfigPathsPlugin({
-                configFile: "./tsconfig.json",
+                configFile: "./tsconfig.build.json",
                 extensions: [".ts", ".js"]
             })
         ],
+        modules: ["./node_modules"],
         extensions: [".js", ".jsx", ".ts", ".tsx"],
         alias: {
             "@sc/sdk": path.resolve(__dirname, "../packages/sc-sdk/dist/esnext"),
-            "@sc/ui/*": path.resolve(__dirname, "../packages/sc-ui/dist/esnext/*")
+            "@sc/ui": path.resolve(__dirname, "../packages/sc-ui/dist/esnext")
         }
     },
     module: {

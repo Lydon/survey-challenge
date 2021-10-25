@@ -16,8 +16,8 @@
 	"typeRoots": ["@types"],
 	"types": ["node"],
 	"paths": {
-	  "@sc/ui/*": ["packages/sc-ui/dist/esnext/*"],
-	  "@sc/sdk": ["packages/sc-sdk/dist/esnext"]
+	  "@sc/ui": ["packages/sc-ui/src"],
+	  "@sc/sdk": ["packages/sc-sdk/src"]
 	}
   }
 }
