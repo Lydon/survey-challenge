@@ -6,7 +6,7 @@
     "start": "lerna run dev",
     "build:ui": "lerna run build:ui",
     "build:sdk": "lerna run build:sdk",
-    "build:all": "lerna run build:all --stream"
+    "build:all": "npm run build:ui & npm run build:sdk"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -24,9 +24,8 @@
     "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "css-loader": "^6.4.0",
-    "eslint": "^8.1.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.4.0",
+    "jest": "^27.3.1",
     "lerna": "^3.13.1",
     "rollup": "^2.58.0",
     "rollup-plugin-dts": "^4.0.0",
@@ -34,23 +33,20 @@
     "terser-webpack-plugin": "^5.2.4",
     "tsconfig-paths": "^3.11.0",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
-    "tslib": "^2.1.0",
-    "typescript": "^4.4.4",
     "webpack": "^5.59.1",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
-    "craco-babel-loader": "^0.1.4",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
     "redux": "^4.1.1",
     "redux-persist": "^6.0.0",
-    "typescript": "^4.4.4",
     "rxjs": "^7.4.0",
-    "tslib": "^2.1.0"
+    "tslib": "^2.1.0",
+    "typescript": "^4.4.4"
   }
 }

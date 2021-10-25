@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+	"paths": {
+	  "@sc/ui": ["packages/sc-ui/dist/esnext"],
+	  "@sc/sdk": ["packages/sc-sdk/dist/esnext"]
+	}
+  }
+}

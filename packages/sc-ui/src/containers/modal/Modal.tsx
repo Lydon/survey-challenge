@@ -37,13 +37,12 @@ import { ModalContext } from "./Modal.context";
 // TODO:: restrict from submitting again if already submitted - DONE
 
 // TODO:: add unit testing
-// TODO:: add README with all steps
-// TODO:: clean packages dependencies
+// TODO:: add README with all steps - DONE
+// TODO:: clean packages dependencies - DONE to recheck
 
 // TODO:: provide the default option for model mapper survey
 // TODO:: export as proper widget
 // TODO:: display form section...
-// TODO:: add language translation -- expose as const...
 
 export const Modal: React.FC<ModalProps> = ({ options }) => {
     const [state, setState] = useReducer<Reducer<ModalState, Partial<ModalState>>>(

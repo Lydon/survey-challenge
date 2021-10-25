@@ -1,6 +1,8 @@
+/apps/host/node_modules/
 /packages/sc-sdk/node_modules/
 /packages/sc-sdk/dist/
 /packages/sc-ui/node_modules/
 /packages/sc-ui/dist/
+/packages/sc-ui/.rollup.cache/
+/packages/sc-ui/tsconfig.tsbuildinfo
 /node_modules/
-/apps/host/node_modules/
