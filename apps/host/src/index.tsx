@@ -36,5 +36,5 @@ render(
             </PersistGate>
         </Provider>
     </React.StrictMode>,
-    document.getElementById("root")
+    document.body.appendChild(document.createElement("div"))
 );

@@ -1,12 +1,23 @@
 module.exports = {
     bail: 1,
-    testRegex: ".*spec.tsx$",
+    testRegex: ".*spec.(ts|tsx)$",
     preset: "ts-jest",
+    setupFilesAfterEnv: ["<rootDir>/setupTest.js"],
     globals: {
         "ts-jest": {
-            tsConfig: "./tsconfig.test.json",
+            tsconfig: "tsconfig.test.json",
             isolatedModules: true
         }
+    },
+    transform: {
+        "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    moduleDirectories: [
+        "node_modules",
+        "packages/sc-sdk/src"
+    ],
+    moduleNameMapper: {
+        "^@sc/sdk$": `<rootDir>/packages/sc-sdk/src`
     },
     moduleFileExtensions: [
         "ts",

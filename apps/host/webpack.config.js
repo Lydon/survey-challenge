@@ -12,7 +12,7 @@ const config = {
     },
     output: {
         path: resolve(__dirname, "./dist"),
-        filename: "bundle.js",
+        filename: "sc-widget.js",
     },
     resolve: {
         plugins: [
@@ -45,8 +45,8 @@ const config = {
         new HtmlWebpackPlugin({
             template: "./src/index.html",
             filename: "index.html",
-            inject: "body",
-        }),
+            inject: "head",
+        })
     ],
 };
 

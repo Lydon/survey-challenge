@@ -1,5 +1,5 @@
 import { Action } from "../model";
-import { Favourites } from "./Favourites.model";
+import { Favourites } from "./favourites.model";
 
 export enum FavouritesTypes {
     SET = "[FAVOURITES] SET"

@@ -1,6 +1,6 @@
 export interface Details {
     age?: number;
-    gender: string;
+    gender?: string;
 }
 
 export interface DetailsStore extends Details {}

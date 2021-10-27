@@ -1,8 +1,7 @@
 import React, {
     ChangeEvent,
     useContext,
-    useEffect,
-    useState
+    useEffect
 } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -14,39 +13,33 @@ import {
 import { ModalContext } from "../../containers/modal/Modal.context";
 
 export const Favourites: React.FC = () => {
-    const selector = useSelector(getFavourites);
+    const favourite = useSelector(getFavourites);
     const dispatch = useDispatch();
-    const [favourite, setFavourites] = useState<FavouritesType>({
-        book: "",
-        colours: []
-    });
+
     const setCanProceed = useContext(ModalContext);
     const primaryColours = ["Red", "Yellow", "Blue"];
 
     useEffect(() => {
-        if (Object.keys(selector)?.length) {
-            setFavourites(selector);
-        }
-        getCanProceed(selector);
+        getCanProceed(favourite);
     }, []);
 
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const formDetails = { ...favourite, [e.target.name]: e.target.value };
-        setFavourites(formDetails);
-        getCanProceed(formDetails);
-    };
+        getCanProceed({ ...favourite,  [e.target.name]: e.target.value });
+    }
 
-    const onBlur = () => {
-        dispatch(sdkSetFavourites(favourite));
-    };
+    const onBlur = (e: ChangeEvent<HTMLInputElement>) => {
+        const formDetails = { ...favourite,  [e.target.name]: e.target.value };
+        getCanProceed(formDetails);
+        dispatch(sdkSetFavourites(formDetails));
+    }
 
     const onCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
         const hasColour = favourite?.colours?.includes(e.target.id);
         const colours = (hasColour && favourite?.colours?.filter(colour => colour !== e.target.id))
-            || [...favourite?.colours, e.target.id];
+            || [...favourite?.colours || "", e.target.id];
         const formDetails = { ...favourite, colours };
-        setFavourites(formDetails);
         getCanProceed(formDetails);
+        dispatch(sdkSetFavourites(formDetails));
     }
 
     function getCanProceed(favourite: FavouritesType): void {
@@ -58,11 +51,11 @@ export const Favourites: React.FC = () => {
             <div className="form-group">
                 <label htmlFor="name">Book*</label>
                 <input
-                    type="name"
+                    type="text"
                     className="form-control"
                     name="book"
                     id="book"
-                    value={favourite.book}
+                    defaultValue={favourite?.book}
                     aria-describedby="Favourite Book"
                     placeholder="Favourite Book"
                     onBlur={onBlur}
@@ -80,7 +73,6 @@ export const Favourites: React.FC = () => {
                             name="colours"
                             id={value}
                             checked={favourite?.colours?.includes(value)}
-                            onFocus={onBlur}
                             onChange={onCheckboxChange}
                         />
                         <label className="form-check-label" htmlFor={value}>

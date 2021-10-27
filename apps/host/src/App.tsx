@@ -5,7 +5,7 @@ import { Modal, ModalOptions } from "@sc/ui";
 const App: React.FC = () => {
     const options: ModalOptions = {
         title: "Yield Street Survey Challenge",
-        modalPopupInterval: 0
+        modalPopupInterval: 2000
     }
     return (
         <>

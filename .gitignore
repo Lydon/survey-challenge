@@ -6,3 +6,5 @@
 /packages/sc-ui/.rollup.cache/
 /packages/sc-ui/tsconfig.tsbuildinfo
 /node_modules/
+
+apps/host/dist/

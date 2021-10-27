@@ -14,7 +14,3 @@ export interface SCStore {
     details: DetailsStore;
     favourites: FavouritesStore;
 }
-
-export interface Dictionary<T> {
-    [key: string]: T;
-}

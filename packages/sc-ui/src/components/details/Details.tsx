@@ -1,8 +1,7 @@
 import React, {
     ChangeEvent,
     useContext,
-    useEffect,
-    useState
+    useEffect
 } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -15,23 +14,16 @@ import {
 import { ModalContext} from "../../containers/modal/Modal.context";
 
 export const Details: React.FC = () => {
-    const [details, setDetails] = useState<DetailsType>({
-        gender: ""
-    });
-    const selector = useSelector(getDetails);
+    const details = useSelector(getDetails);
     const dispatch = useDispatch();
     const setCanProceed = useContext(ModalContext);
 
     useEffect(() => {
-        if (Object.keys(selector)?.length) {
-            setDetails(selector);
-        }
-        getCanProceed(selector);
+        getCanProceed(details);
     }, []);
 
     const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const formDetails = { ...details, [e.target.name]: e.target.value };
-        setDetails(formDetails);
         getCanProceed(formDetails);
         dispatch(sdkSetDetails(formDetails));
     };
@@ -77,7 +69,7 @@ export const Details: React.FC = () => {
                                 name="gender"
                                 onChange={onChange}
                                 value={value}
-                                checked={details.gender === value}
+                                checked={details?.gender === value}
                                 id={value} />
                             <label className="form-check-label" htmlFor={value}>
                                 {value}

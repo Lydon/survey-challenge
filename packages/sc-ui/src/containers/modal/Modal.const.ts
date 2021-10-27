@@ -1,5 +1,5 @@
 import { ModalOptions, ModalSectionConfig } from "./Modal.model";
-import { Dictionary, ModalSection } from "@sc/sdk";
+import { ModalSection } from "@sc/sdk";
 
 export const ModalOptionsDefaults: ModalOptions = {
     title: "A survey challenge",
@@ -17,7 +17,7 @@ export const ModalMessages = {
     submitted: "Form has already been submitted!"
 }
 
-export const ModalSectionDefaults: Dictionary<ModalSectionConfig> = {
+export const ModalSectionDefaults: Record<ModalSection, ModalSectionConfig> = {
     [ModalSection.Identity]: {
         name: ModalSection.Identity,
         order: 0,

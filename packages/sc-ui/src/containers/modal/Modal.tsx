@@ -29,10 +29,6 @@ import {
 import { ModalControl, ModalProps, ModalState } from "./Modal.model";
 import { ModalContext } from "./Modal.context";
 
-// TODO:: export as proper widget
-// TODO:: add unit testing
-// TODO:: clean packages dependencies - DONE to recheck
-
 export const Modal: React.FC<ModalProps> = ({ options , sections}) => {
     const [state, setState] = useReducer<Reducer<ModalState, Partial<ModalState>>>(
         (state, newState) => ({ ...state, ...newState }),

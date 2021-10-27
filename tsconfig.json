@@ -21,8 +21,8 @@
 	  "node_modules/@types"
 	],
 	"paths": {
-	  "@sc/ui": ["packages/sc-ui/src"],
-	  "@sc/sdk": ["packages/sc-sdk/src"]
+	  "@sc/ui": ["./packages/sc-ui/src"],
+	  "@sc/sdk": ["./packages/sc-sdk/src"]
 	}
   }
 }
